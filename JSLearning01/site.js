@@ -2,7 +2,6 @@
 //document.write("Learning JavaScript :)")
 //alert("Learning JavaScript \
 //again");
-
 var jSonObject = [
     {
         "firstName": "Michael",
@@ -47,3 +46,11 @@ function removeLI() {
     var li = document.getElementById("roomC");
     list.removeChild(li);
 }
+
+//on document load - because if without, the image won't parse
+//before the script starting to work and then got error saying
+//that the object (our image) is not exist
+document.addEventListener("DOMContentLoaded", function () {
+    var helpImage = document.images.help;
+    helpImage.onmouseover = function () { window.alert('Help :'); };
+});
