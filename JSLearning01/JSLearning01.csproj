@@ -77,6 +77,7 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="site.js" />
+    <Content Include="usingJQuery.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
