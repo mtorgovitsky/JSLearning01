@@ -13,6 +13,8 @@ var jSonObject = [
     }
 ];
 
+var helpImage;
+
 var jsonString = JSON.stringify(jSonObject);
 console.log(jsonString);
 
@@ -41,16 +43,28 @@ function addID() {
     }
 }
 
+function onClickAlert() {
+    alert("Image Clicked");
+}
+
 function removeLI() {
     var list = document.getElementById("roomsList");
     var li = document.getElementById("roomC");
     list.removeChild(li);
 }
 
+function removeMouseMoveEvent() {
+    helpImage.removeEventListener("click", onClickAlert, false);
+}
+
 //on document load - because if without, the image won't parse
 //before the script starting to work and then got error saying
 //that the object (our image) is not exist
 document.addEventListener("DOMContentLoaded", function () {
-    var helpImage = document.images.help;
-    helpImage.onmouseover = function () { window.alert('Help :'); };
+    helpImage = document.images.help;
+    //helpImage.onmouseover = function () {
+    //    window.alert("Help :");
+    //};
+    helpImage.addEventListener("mouseover", function () { alert("mouse moved!"); }, false);
+    helpImage.addEventListener("click", onClickAlert, false);
 });
